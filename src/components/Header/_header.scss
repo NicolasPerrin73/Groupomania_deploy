@@ -1,0 +1,196 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: -3px 3px 10px black;
+  z-index: 1;
+
+  @include desktop-only {
+    height: 100%;
+    width: auto;
+  }
+
+  &__logo {
+    position: absolute;
+    top: 3px;
+    right: 5px;
+    width: 150px;
+
+    @include desktop-only {
+      position: relative;
+      margin: auto;
+    }
+  }
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    height: 90px;
+    background-color: $color-tertiary;
+    align-items: center;
+    justify-content: space-between;
+
+    @include tablet-only {
+      flex-direction: row;
+    }
+
+    @include desktop-only {
+      height: 100%;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    &__top {
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 5px;
+
+      @include desktop-only {
+        flex-direction: column;
+      }
+    }
+
+    &__link {
+      display: flex;
+      justify-content: space-around;
+      background-color: $color-tertiary;
+      border-radius: 0px 0px 20px 20px;
+      box-shadow: -3px 3px 10px black;
+      transition: transform ease-in-out 300ms;
+      transform: translateY(-75px);
+      z-index: -1;
+      padding: 5px;
+
+      @include tablet-only {
+        z-index: 0;
+        background-color: transparent;
+        box-shadow: none;
+        transform: none;
+        align-self: flex-end;
+        width: auto;
+      }
+
+      @include desktop-only {
+        flex-direction: column;
+        align-self: center;
+        gap: 20px;
+      }
+
+      &--down {
+        transform: translateY(0px);
+      }
+    }
+
+    &__burger {
+      align-self: flex-end;
+
+      @include tablet-only {
+        display: none;
+      }
+
+      &__line {
+        display: flex;
+        width: 3em;
+        height: 7px;
+        margin-top: 8px;
+        background-color: white;
+        border-radius: 3px;
+        transform: rotate(0);
+
+        &--moveBar1_1 {
+          animation: burgerBar1_1 200ms ease-in-out both;
+        }
+        &--moveBar2_1 {
+          animation: burgerBar2_1 200ms ease-in-out both;
+        }
+        &--moveBar3_1 {
+          animation: burgerBar3_1 200ms ease-in-out both;
+        }
+
+        &--moveBar1 {
+          animation: burgerBar1 200ms ease-in-out both;
+        }
+        &--moveBar2 {
+          animation: burgerBar2 200ms ease-in-out both;
+        }
+        &--moveBar3 {
+          animation: burgerBar3 200ms ease-in-out both;
+        }
+      }
+    }
+  }
+  & i {
+    font-size: 24px;
+
+    @include desktop-only {
+      font-size: 40px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 50px;
+    padding: 5px;
+
+    @include desktop-only {
+      font-size: 24px;
+      height: auto;
+    }
+
+    &--picture {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      align-self: flex-start;
+      height: 100%;
+
+      @include desktop-only {
+        flex-direction: column;
+        align-self: center;
+        gap: 20px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+      }
+
+      & i {
+        font-size: 70px;
+        @include desktop-only {
+          position: relative;
+          top: 40px;
+          font-size: 100px;
+        }
+      }
+
+      & div {
+        min-width: 70px;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        overflow: hidden;
+
+        @include desktop-only {
+          width: 150px;
+          height: 150px;
+        }
+      }
+
+      & img {
+        height: 100%;
+        margin: auto;
+      }
+      & span {
+        font-size: 20px;
+        font-weight: 700;
+        margin-left: 10px;
+
+        @include desktop-only {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}

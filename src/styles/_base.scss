@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  font-family: "Lato", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  box-sizing: border-box !important; /* Opera/IE 8+ */
+  -moz-box-sizing: border-box !important; /* Firefox, autres Gecko */
+  -webkit-box-sizing: border-box !important; /* Safari/Chrome, autres WebKit */
+
+  max-width: 1920px;
+  min-width: 320px;
+
+  background-color: lighten($color-secondary, $amount: 0);
+}
+
+main {
+  margin-top: 90px;
+
+  @include desktop-only {
+    margin-top: 0px;
+  }
+
+  & h1 {
+    font-size: 24px;
+    background-color: $color-lighten-tertiary;
+    margin: 0;
+    padding: 10px;
+    margin-bottom: 10px;
+
+    @include desktop-only {
+      text-align: center;
+      font-size: 28px;
+    }
+  }
+}
+
+p {
+  margin: 10px;
+}
+
+button {
+  @include button;
+}
+
+.button {
+  @include button;
+
+  &--red {
+    background-color: $color-primary;
+    border-color: $color-primary;
+  }
+}
+
+a {
+  text-decoration: none;
+  text-align: center;
+  color: white;
+}
+
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+ul {
+  padding: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.left-decoration {
+  display: none;
+  @include desktop-only {
+    display: block;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 200px;
+    background-color: $color-tertiary;
+  }
+}

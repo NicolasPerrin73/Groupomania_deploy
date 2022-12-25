@@ -1,0 +1,44 @@
+#file {
+  display: none;
+}
+
+.post__content--publish {
+  @include flex-column-center;
+  background: transparent;
+
+  & .button {
+    font-size: 20px;
+    width: 192px;
+    text-align: center;
+    padding: 3px;
+    margin: 10px;
+  }
+
+  & textarea {
+    width: 98%;
+    border: none;
+  }
+}
+
+.img_container {
+  position: relative;
+  & img {
+    max-width: 100%;
+  }
+  & button {
+    margin: 10px;
+    font-size: 20px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.post__footer--publish {
+  cursor: pointer;
+  justify-content: center;
+  border: outset $color-tertiary 5px;
+}
