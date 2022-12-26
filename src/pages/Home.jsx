@@ -11,11 +11,6 @@ import Loader from "../components/Loader/Loader";
  * @return {*}
  */
 const Home = () => {
-  // Redirection if no token in localStorage
-  if (localStorage.length === 0) {
-    window.location.href = "/login";
-  }
-
   //Component states
   const [postsData, setPostsData] = useState([]);
   const [deletedPost, setDeletedPost] = useState(false);

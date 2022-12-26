@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Login from "./pages/login/Login";
 import Home from "./pages/Home";
 import SignUp from "./pages/Signup";
@@ -16,11 +16,11 @@ import Error404 from "./pages/Error 404/Error404";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/groupomania">
       <Routes>
         <Route exact path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={localStorage.length === 0 ? <Navigate to="/login" /> : <Home />} />
         <Route path="/addpost" element={<AddPost />} />
         <Route path="/editPost/:postId" element={<EditPost />} />
         <Route path="/account" element={<Account />} />
